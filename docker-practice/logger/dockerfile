@@ -1,0 +1,7 @@
+FROM ubuntu:22.04
+
+RUN apt update && apt install -y curl
+
+RUN mkdir -p /logs
+
+CMD ["bash", "-c", "echo 'DevOps стартовал!' >> /logs/info.log && sleep 10"]
