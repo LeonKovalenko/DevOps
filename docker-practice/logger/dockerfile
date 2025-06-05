@@ -2,6 +2,7 @@ FROM ubuntu:22.04
 
 RUN apt update && apt install -y curl
 
-RUN mkdir -p /logs
+# НЕ создавай /logs здесь — volume всё равно перекроет
+# RUN mkdir -p /logs  ❌ не нужен
 
 CMD ["bash", "-c", "echo 'DevOps стартовал!' >> /logs/info.log && sleep 10"]
