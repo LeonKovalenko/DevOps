@@ -1,18 +1,9 @@
-version: "3.8"
-
 services:
   logger:
     build:
       context: ./logger
     volumes:
       - devops_logs:/logs
-    networks:
-      - appnet
-
-  nginx:
-    image: nginx:latest
-    ports:
-      - "8080:80"
     networks:
       - appnet
 
